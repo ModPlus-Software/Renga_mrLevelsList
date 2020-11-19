@@ -202,7 +202,7 @@
             _modelView.SetObjectsVisibility(ids.ToArray(), isVisible);
         }
 
-        private IEnumerable<int> GetObjectIdsBy(Func<dynamic, bool> func, bool includeLevels = false)
+        private IEnumerable<int> GetObjectIdsBy(Func<object, bool> func, bool includeLevels = false)
         {
             var project = _rengaApplication.Project;
             var modelObjectCollection = project.Model.GetObjects();
