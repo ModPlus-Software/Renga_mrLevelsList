@@ -1,0 +1,79 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+   <PropertyGroup>
+    <Version>1.0.0.0</Version>
+    <RootNamespace>mrLevelsList</RootNamespace>
+    <AssemblyName>$(RootNamespace)</AssemblyName>
+   </PropertyGroup>
+  
+  <PropertyGroup>
+    <Company>modplus.org</Company>
+    <Authors>modplus.org</Authors>
+    <Product>ModPlus</Product>
+    <Copyright>Copyright © ModPlus</Copyright>
+    <CodeAnalysisRuleSet>$(SolutionDir)\ModPlus.ruleset</CodeAnalysisRuleSet>
+    <Platform>x64</Platform>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <Optimize>false</Optimize>
+    <Prefer32Bit>false</Prefer32Bit>
+    <UseWpf>true</UseWpf>
+    <TargetFramework>net452</TargetFramework>
+    <AssemblyName>$(AssemblyName)</AssemblyName>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <Configurations>Debug</Configurations>
+    <DefineConstants>Debug</DefineConstants>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' != 'Debug'">
+    <Configurations>Release</Configurations>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <COMReference Include="Renga">
+      <Guid>{0EC5D324-8B9F-4D30-84ED-AB711618D1C1}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Icons\mrLevelsList_16x16.png" />
+    <EmbeddedResource Include="Icons\mrLevelsList_24x24.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="JetBrains.Annotations" Version="2020.1.0" ExcludeAssets="runtime" />
+    <PackageReference Include="ModPlusAPI" Version="5.1.0" ExcludeAssets="runtime" />
+    <PackageReference Include="ModPlusStyle" Version="3.7.0" ExcludeAssets="runtime" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="ModPlus_Renga">
+      <HintPath>..\..\..\..\..\..\..\ModPlus\Extensions\ModPlus_Renga.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Renga.NET.PluginUtility">
+      <HintPath>..\..\..\..\..\..\..\ModPlus\Extensions\Renga.NET.PluginUtility.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\mrLevelsList_16x16.png" />
+    <Resource Include="Resources\mrLevelsList_32x32.png" />
+  </ItemGroup>
+  
+</Project>
